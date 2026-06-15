@@ -1,0 +1,11 @@
+# Originalfoton (zippade) – behövs inte i repot, de optimerade .jpg används på sajten
+assets/projects/*.zip
+
+# OS- och editorfiler
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+
+# Lokala verktyg/förhandsvisning
+.claude/
