@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="260" height="88" viewBox="0 0 260 88" role="img" aria-labelledby="title desc">
-  <title id="title">Företagsnamn Bygg logotyp</title>
-  <desc id="desc">Tillfällig logotyp för bygg- och renoveringsföretag.</desc>
-  <rect width="260" height="88" rx="8" fill="#0f3a35"/>
-  <rect x="16" y="16" width="56" height="56" rx="8" fill="#c89b4a"/>
-  <path d="M28 55V31h18c8 0 13 4 13 11s-5 13-14 13H28Zm11-9h6c3 0 5-2 5-5 0-2-2-4-5-4h-6v9Z" fill="#11130f"/>
-  <path d="M83 31h67v10H83V31Zm0 17h112v9H83v-9Zm0 16h86v8H83v-8Z" fill="#ffffff"/>
-  <path d="M210 26l22 18-22 18v-9h-18V35h18v-9Z" fill="#c89b4a"/>
-</svg>
