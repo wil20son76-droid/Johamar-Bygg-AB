@@ -637,6 +637,76 @@ h1, h2, h3 {
   margin: 0 auto 1.2rem;
 }
 
+/* ---------- Områden vi arbetar i (lokal SEO) ---------- */
+.areas-block {
+  margin-top: clamp(2.6rem, 5vw, 3.6rem);
+}
+.areas-intro {
+  max-width: 760px;
+  margin: 0 auto clamp(1.8rem, 4vw, 2.5rem);
+  text-align: center;
+}
+.areas-intro h2 {
+  font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+  margin-bottom: 0.8rem;
+}
+.areas-intro p { color: var(--muted); }
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+}
+.area-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.4rem 1.4rem 1.5rem;
+  transition: transform 320ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 320ms ease;
+}
+.area-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.area-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.05rem;
+  color: var(--brand);
+  margin-bottom: 0.9rem;
+}
+.area-card h3 svg { color: var(--brand-2); flex-shrink: 0; }
+.area-chips {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+.area-chips li {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ink);
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.3rem 0.72rem;
+}
+/* Markerat block – jobbar du utanför områdena? */
+.areas-cta {
+  margin-top: clamp(2rem, 4vw, 2.6rem);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem 1.8rem;
+  text-align: center;
+  padding: clamp(1.6rem, 3vw, 2.2rem);
+  border-radius: var(--radius-lg);
+  background: radial-gradient(120% 140% at 80% 0%, #0c3f80 0%, var(--brand) 45%, var(--brand-dark) 100%);
+  color: var(--white);
+}
+.areas-cta p { color: rgba(255, 255, 255, 0.92); font-size: 1.05rem; }
+.areas-cta strong { color: var(--white); font-family: var(--font-head); font-weight: 700; }
+
 /* ---------- Process (mörk tidslinje) ---------- */
 .process-section {
   position: relative;
@@ -1698,6 +1768,7 @@ h1, h2, h3 {
   .process-timeline::before { display: none; }
   .service-grid { grid-template-columns: repeat(2, 1fr); }
   .projects-grid { grid-template-columns: repeat(2, 1fr); }
+  .areas-grid { grid-template-columns: repeat(2, 1fr); }
   .sp-divider { display: none; }
   .lp-hero .container { grid-template-columns: 1fr; }
   .lp-layout { grid-template-columns: 1fr; }
