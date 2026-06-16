@@ -327,6 +327,13 @@ h1, h2, h3 {
   font-size: clamp(2.1rem, 5.2vw, 3.5rem);
   margin-bottom: 1.1rem;
 }
+.hero-tagline {
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: clamp(1.1rem, 2.4vw, 1.4rem);
+  color: #ffcf9e;
+  margin-bottom: 0.85rem;
+}
 .hero-lead {
   font-size: clamp(1.05rem, 2.2vw, 1.25rem);
   color: rgba(255, 255, 255, 0.9);
