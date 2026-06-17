@@ -748,6 +748,11 @@ h1, h2, h3 {
   border-radius: 999px;
   padding: 0.3rem 0.72rem;
 }
+.area-chips a {
+  color: var(--brand);
+  font-weight: 600;
+}
+.area-chips a:hover { color: var(--brand-2); text-decoration: underline; }
 /* Markerat block – jobbar du utanför områdena? */
 .areas-cta {
   margin-top: clamp(2rem, 4vw, 2.6rem);
