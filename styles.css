@@ -1122,6 +1122,22 @@ h1, h2, h3 {
 }
 .float-btn.to-top:hover { background: var(--brand-dark); }
 
+/* Fast CTA-rad i mobil (visas endast på små skärmar) */
+.mobile-cta { display: none; }
+.mcta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.95rem 0.5rem;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 0.98rem;
+  color: var(--white);
+}
+.mcta-call { background: var(--brand); }
+.mcta-quote { background: var(--brand-2); }
+
 /* ---------- Reveal on scroll ---------- */
 .reveal {
   opacity: 0;
@@ -1847,6 +1863,23 @@ h1, h2, h3 {
   .nav-menu a { padding: 0.8rem 0.6rem; }
   .nav-menu .nav-cta { margin-left: 0; text-align: center; margin-top: 0.3rem; }
   .hero-actions .btn { flex: 1 1 auto; }
+}
+
+@media (max-width: 760px) {
+  .mobile-cta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 95;
+    box-shadow: 0 -6px 20px -8px rgba(6, 47, 99, 0.3);
+  }
+  /* lyft de runda knapparna ovanför CTA-raden */
+  .floating-actions { bottom: calc(clamp(0.9rem, 3vw, 1.6rem) + 60px); }
+  /* utrymme så raden inte täcker sidfoten */
+  body { padding-bottom: 58px; }
 }
 
 @media (max-width: 520px) {
