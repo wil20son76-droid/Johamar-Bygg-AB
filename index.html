@@ -62,11 +62,6 @@
           "Takrengöring",
           "Fasadrenovering och målning"
         ],
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.9",
-          "reviewCount": "27"
-        },
         "priceRange": "$$",
         "sameAs": [
           "https://www.facebook.com/profile.php?id=100091965529718",
@@ -119,15 +114,11 @@
               Ring 072 321 32 32</a>
           </div>
           <p class="hero-reassure">Kostnadsfritt och utan förbindelse · Svar inom 24 timmar</p>
-          <a class="google-badge" href="https://g.page/r/CeP5kmNfpg7SEBM/review" target="_blank" rel="noopener" aria-label="5,0 i betyg på Google – läs omdömen">
-            <span class="g-logo" aria-hidden="true">G</span>
-            <span class="g-stars" aria-hidden="true">★★★★★</span>
-            <span class="g-text"><strong>5,0</strong> på Google · läs omdömen</span>
-          </a>
-          <ul class="trust-row" aria-label="Förtroende">
-            <li>Fast offert</li>
-            <li>Erfarna hantverkare</li>
-            <li>Ansvar hela vägen</li>
+          <ul class="hero-trust" aria-label="Trygghet och garantier">
+            <li class="ht-rot">Godkänd för ROT-avdrag</li>
+            <li>Godkänd för F-skatt</li>
+            <li>Ansvarsförsäkrad</li>
+            <li>Garanti på utfört arbete</li>
             <li>Stockholm med omnejd</li>
           </ul>
         </div>
@@ -135,25 +126,6 @@
           <span>Scrolla</span>
           <span class="scroll-arrow" aria-hidden="true"></span>
         </a>
-      </section>
-
-      <!-- Social proof: betyg direkt under hero för omedelbart förtroende -->
-      <section class="social-proof" aria-label="Kundbetyg och omdömen">
-        <div class="container">
-          <div class="sp-card reveal">
-            <div class="sp-main">
-              <div class="sp-stars" aria-hidden="true">★★★★★</div>
-              <p class="sp-rating"><strong>4,9</strong> av 5 i betyg</p>
-              <p class="sp-sub">Verifierade omdömen</p>
-            </div>
-            <span class="sp-divider" aria-hidden="true"></span>
-            <ul class="sp-platforms" aria-label="Plattformar med omdömen">
-              <li><span class="g-logo" aria-hidden="true">G</span> Google</li>
-              <li><span class="sf-logo" aria-hidden="true">S</span> Servicefinder</li>
-            </ul>
-            <a class="btn btn-primary sp-cta" href="https://g.page/r/CeP5kmNfpg7SEBM/review" target="_blank" rel="noopener">Läs våra omdömen</a>
-          </div>
-        </div>
       </section>
 
       <section class="stats-band" id="stats" aria-label="Johamar Bygg i siffror">
@@ -171,8 +143,8 @@
             <span class="stat-label">Fokus på nöjda kunder</span>
           </div>
           <div class="stat reveal">
-            <span class="stat-num stat-static">5,0</span>
-            <span class="stat-label">Betyg på Google</span>
+            <span class="stat-num stat-static">30%</span>
+            <span class="stat-label">ROT-avdrag på arbetet</span>
           </div>
         </div>
       </section>
@@ -567,33 +539,17 @@
       <section class="section testimonials-section" id="omdomen">
         <div class="container">
           <div class="section-heading reveal">
-            <p class="eyebrow">Kundomdömen</p>
-            <h2>Trygghet märks i både processen och resultatet</h2>
-          </div>
-          <div class="testimonial-grid">
-            <figure class="testimonial reveal">
-              <div class="t-stars" aria-hidden="true">★★★★★</div>
-              <blockquote>Kommunikationen var tydlig från första samtalet. Arbetet blev klart enligt plan och resultatet känns genomarbetat.</blockquote>
-              <figcaption>Anna L., Stockholm</figcaption>
-            </figure>
-            <figure class="testimonial reveal">
-              <div class="t-stars" aria-hidden="true">★★★★★</div>
-              <blockquote>Vi fick snabb hjälp med måleri och byggservice i lokalen och uppskattade särskilt ordningen på arbetsplatsen.</blockquote>
-              <figcaption>Johan M., Stockholm</figcaption>
-            </figure>
-            <figure class="testimonial reveal">
-              <div class="t-stars" aria-hidden="true">★★★★★</div>
-              <blockquote>Köket blev precis som vi ville ha det. Seriöst bemötande, bra rådgivning och fin finish.</blockquote>
-              <figcaption>Maria S., Stockholm</figcaption>
-            </figure>
+            <p class="eyebrow">Omdömen</p>
+            <h2>Verifierade omdömen från våra kunder</h2>
+            <p>Vi samlar omdömen från riktiga kunder på Servicefinder. Vårt Google-omdöme byggs upp löpande i takt med nya projekt.</p>
           </div>
           <div class="review-cta reveal">
-            <span class="g-logo" aria-hidden="true">G</span>
+            <span class="sf-logo" aria-hidden="true">S</span>
             <div>
-              <strong>5,0 av 5 på Google</strong>
-              <span>Nöjda kunder i Stockholm med omnejd</span>
+              <strong>Verifierade omdömen på Servicefinder</strong>
+              <span>Riktiga omdömen från kunder i Stockholm med omnejd</span>
             </div>
-            <a class="btn btn-secondary" href="https://g.page/r/CeP5kmNfpg7SEBM/review" target="_blank" rel="noopener">Lämna ett omdöme på Google</a>
+            <a class="btn btn-secondary" href="https://www.servicefinder.se/" target="_blank" rel="noopener" data-servicefinder>Se våra omdömen på Servicefinder</a>
           </div>
         </div>
       </section>
@@ -677,6 +633,10 @@
               Meddelande
               <textarea name="Meddelande" rows="5" placeholder="Beskriv projektet kort"></textarea>
             </label>
+            <label class="form-consent full">
+              <input type="checkbox" name="Samtycke" value="Ja" required>
+              <span>Jag samtycker till att JOHAMAR BYGG AB behandlar mina uppgifter enligt <a href="integritetspolicy.html" target="_blank" rel="noopener">integritetspolicyn</a>.</span>
+            </label>
             <button class="btn btn-primary full" type="submit" data-submit>Skicka förfrågan</button>
             <p class="form-success" data-form-success role="status" aria-live="polite" hidden>Tack! Din förfrågan har skickats. Vi återkommer så snart vi kan.</p>
             <p class="form-error" data-form-error role="alert" hidden>Något gick fel. Försök igen eller ring oss på 072 321 32 32.</p>
@@ -700,6 +660,7 @@
           <a href="mailto:info@johamarbygg.se">info@johamarbygg.se</a>
           <span>Mullbärsstigen 7, 196 34 Kungsängen</span>
           <span>Mån–Fre 07:00–18:00</span>
+          <span>Org.nr 559338-8449</span>
         </div>
         <div>
           <h2>Tjänster</h2>
@@ -717,6 +678,7 @@
       </div>
       <div class="container footer-bottom">
         <span>© <span data-year></span> JOHAMAR BYGG AB. Alla rättigheter förbehållna.</span>
+        <a href="integritetspolicy.html">Integritetspolicy</a>
       </div>
     </footer>
 

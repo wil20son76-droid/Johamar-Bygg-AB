@@ -375,6 +375,37 @@ h1, h2, h3 {
   list-style: none;
   padding: 0;
 }
+/* Förtroende-/garantibrickor i hero */
+.hero-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 0.7rem;
+  list-style: none;
+  padding: 0;
+  margin: 0.2rem 0 0.2rem;
+}
+.hero-trust li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+}
+.hero-trust li::before {
+  content: "✓";
+  font-weight: 800;
+  color: #ffcf9e;
+}
+.hero-trust li.ht-rot {
+  background: var(--brand-2);
+  border-color: var(--brand-2);
+}
+.hero-trust li.ht-rot::before { color: var(--white); }
 .trust-row li {
   position: relative;
   padding-left: 1.4rem;
@@ -1040,11 +1071,18 @@ h1, h2, h3 {
 }
 .footer-grid a:hover { color: #ffcf9e; }
 .footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   padding-block: 1.4rem;
   font-size: 0.88rem;
   color: rgba(255, 255, 255, 0.6);
 }
+.footer-bottom a { color: rgba(255, 255, 255, 0.7); }
+.footer-bottom a:hover { color: #ffcf9e; }
 
 /* ---------- Flytande knappar ---------- */
 .floating-actions {
@@ -1440,6 +1478,29 @@ h1, h2, h3 {
   color: #a32020;
   font-size: 0.92rem;
 }
+/* GDPR-samtycke i formuläret */
+.form-consent {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+.contact-form .form-consent input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 0.15rem;
+  padding: 0;
+  background: none;
+  border-radius: 4px;
+  accent-color: var(--brand-2);
+  flex-shrink: 0;
+}
+.form-consent a { color: var(--brand); font-weight: 600; text-decoration: underline; }
+.form-consent a:hover { color: var(--brand-2); }
 
 /* ---------- Projektgalleri ---------- */
 .projects-grid {
