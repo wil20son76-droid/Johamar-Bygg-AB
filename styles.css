@@ -1335,7 +1335,12 @@ h1, h2, h3 {
 }
 .review-cta strong { display: block; font-family: var(--font-head); color: var(--brand); font-size: 1.1rem; }
 .review-cta span { color: var(--muted); font-size: 0.92rem; }
-.review-cta .btn { margin-left: auto; }
+.review-cta-actions {
+  margin-left: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
 
 /* ---------- Kontaktdetaljer ---------- */
 .contact-details {
@@ -1831,7 +1836,7 @@ h1, h2, h3 {
 /* ---------- Responsivt ---------- */
 @media (max-width: 900px) {
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1.8rem 1rem; }
-  .review-cta .btn { margin-left: 0; }
+  .review-cta-actions { margin-left: 0; }
   .process-timeline { grid-template-columns: repeat(2, 1fr); gap: 2.5rem 1.5rem; }
   .process-timeline::before { display: none; }
   .service-grid { grid-template-columns: repeat(2, 1fr); }
