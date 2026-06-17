@@ -1111,6 +1111,16 @@ h1, h2, h3 {
 .float-btn.instagram {
   background: radial-gradient(circle at 30% 110%, #fdf497, #fd5949 45%, #d6249f 70%, #285aeb 100%);
 }
+/* Tillbaka till toppen-knapp (visas efter scroll, ovanför sociala knappar) */
+.float-btn.to-top {
+  background: var(--brand);
+  display: none;
+}
+.float-btn.to-top.is-visible {
+  display: inline-flex;
+  animation: fade-in 250ms ease;
+}
+.float-btn.to-top:hover { background: var(--brand-dark); }
 
 /* ---------- Reveal on scroll ---------- */
 .reveal {

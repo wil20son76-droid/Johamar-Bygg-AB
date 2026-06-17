@@ -205,6 +205,19 @@ if (svcOverlay) {
   );
 }
 
+/* ---------- Tillbaka till toppen ---------- */
+const toTopBtn = document.querySelector("[data-to-top]");
+if (toTopBtn) {
+  const toggleToTop = () => {
+    toTopBtn.classList.toggle("is-visible", window.scrollY > 400);
+  };
+  toggleToTop();
+  window.addEventListener("scroll", toggleToTop, { passive: true });
+  toTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: prefersReduced ? "auto" : "smooth" });
+  });
+}
+
 /* ---------- Instagram-flöde med fallback ----------
    Visar Instagram-widgeten (LightWidget/Elfsight/SociableKit) om en embed
    är inklistrad och laddar. Annars visas de lokala projektbilderna. */
