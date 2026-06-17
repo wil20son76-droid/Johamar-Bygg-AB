@@ -593,6 +593,26 @@ h1, h2, h3 {
 }
 .stats-panel span { color: rgba(255, 255, 255, 0.82); font-size: 0.95rem; }
 
+/* ---------- Möt oss (team) ---------- */
+.team-layout {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(2rem, 5vw, 3.5rem);
+  align-items: center;
+}
+.team-media img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+.team-text h2 {
+  font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+  margin-bottom: 0.9rem;
+}
+.team-text p { color: var(--muted); margin-bottom: 1rem; }
+
 /* ---------- Fördelar ---------- */
 .benefit-grid {
   display: grid;
@@ -1826,6 +1846,7 @@ h1, h2, h3 {
   .projects-grid { grid-template-columns: repeat(2, 1fr); }
   .areas-grid { grid-template-columns: repeat(2, 1fr); }
   .sp-divider { display: none; }
+  .team-layout { grid-template-columns: 1fr; }
   .lp-hero .container { grid-template-columns: 1fr; }
   .lp-layout { grid-template-columns: 1fr; }
   .lp-aside { position: static; }
