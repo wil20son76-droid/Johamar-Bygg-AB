@@ -1163,6 +1163,29 @@ h1, h2, h3 {
 .mcta-call { background: var(--brand); }
 .mcta-quote { background: var(--brand-2); }
 
+/* Cookie-samtycke (visas endast om spårning är aktiverad) */
+.cookie-consent {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 200;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem 1.5rem;
+  padding: 1rem 1.2rem;
+  background: var(--brand-dark);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.9rem;
+  box-shadow: 0 -8px 24px -10px rgba(0, 0, 0, 0.45);
+}
+.cookie-consent p { margin: 0; max-width: 640px; }
+.cookie-consent a { color: #ffcf9e; text-decoration: underline; }
+.cookie-actions { display: flex; gap: 0.6rem; flex-shrink: 0; }
+.cookie-consent .btn { padding: 0.6rem 1.2rem; font-size: 0.9rem; }
+
 /* ---------- Reveal on scroll ---------- */
 .reveal {
   opacity: 0;

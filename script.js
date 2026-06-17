@@ -8,6 +8,105 @@ const header = document.querySelector("[data-header]");
 const year = document.querySelector("[data-year]");
 const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+/* ============================================================
+   Analys & konvertering: GA4 + Google Ads med cookie-samtycke
+   ------------------------------------------------------------
+   FYLL I DINA ID:N HÄR för att aktivera spårningen.
+   Lämnas som "XXXX" = inget laddas och ingen cookie-banner visas.
+   ============================================================ */
+const GA_MEASUREMENT_ID = "G-XXXXXXXXXX";   // GA4 Mät-ID (Analytics)
+const ADS_CONVERSION_ID = "AW-XXXXXXXXXX";  // Google Ads konverterings-ID (valfritt)
+const ADS_LEAD_LABEL = "XXXXXXXXXXX";       // Etikett för konverteringen "offertförfrågan"
+
+const TRACKING_ENABLED = GA_MEASUREMENT_ID.indexOf("XXXX") === -1;
+const ADS_ENABLED = ADS_CONVERSION_ID.indexOf("XXXX") === -1;
+
+window.dataLayer = window.dataLayer || [];
+function gtag() { window.dataLayer.push(arguments); }
+
+/* Hjälpfunktioner som anropas från resten av sidan */
+function jhmrTrack(eventName, params) {
+  if (TRACKING_ENABLED && window.gtagLoaded) gtag("event", eventName, params || {});
+}
+function jhmrTrackLead() {
+  if (!TRACKING_ENABLED || !window.gtagLoaded) return;
+  gtag("event", "generate_lead", { currency: "SEK", value: 0 });
+  if (ADS_ENABLED && ADS_LEAD_LABEL.indexOf("XXXX") === -1) {
+    gtag("event", "conversion", { send_to: ADS_CONVERSION_ID + "/" + ADS_LEAD_LABEL });
+  }
+}
+
+function jhmrLoadGtag() {
+  if (window.gtagLoaded) return;
+  gtag("consent", "update", {
+    ad_storage: "granted",
+    analytics_storage: "granted",
+    ad_user_data: "granted",
+    ad_personalization: "granted",
+  });
+  const s = document.createElement("script");
+  s.async = true;
+  s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_MEASUREMENT_ID;
+  document.head.appendChild(s);
+  gtag("js", new Date());
+  gtag("config", GA_MEASUREMENT_ID, { anonymize_ip: true });
+  if (ADS_ENABLED) gtag("config", ADS_CONVERSION_ID);
+  window.gtagLoaded = true;
+}
+
+if (TRACKING_ENABLED) {
+  // Consent Mode v2 – allt nekat tills användaren godkänner
+  gtag("consent", "default", {
+    ad_storage: "denied",
+    analytics_storage: "denied",
+    ad_user_data: "denied",
+    ad_personalization: "denied",
+    wait_for_update: 500,
+  });
+
+  const consentKey = "jhmr-cookie-consent";
+  const stored = localStorage.getItem(consentKey);
+
+  const showCookieBanner = () => {
+    const bar = document.createElement("div");
+    bar.className = "cookie-consent";
+    bar.setAttribute("role", "dialog");
+    bar.setAttribute("aria-label", "Cookie-samtycke");
+    bar.innerHTML =
+      '<p>Vi använder cookies för statistik och marknadsföring. Läs mer i vår ' +
+      '<a href="integritetspolicy.html">integritetspolicy</a>.</p>' +
+      '<div class="cookie-actions">' +
+      '<button type="button" class="btn btn-secondary" data-cookie-decline>Avböj</button>' +
+      '<button type="button" class="btn btn-primary" data-cookie-accept>Acceptera</button>' +
+      "</div>";
+    document.body.appendChild(bar);
+    bar.querySelector("[data-cookie-accept]").addEventListener("click", () => {
+      localStorage.setItem(consentKey, "granted");
+      jhmrLoadGtag();
+      bar.remove();
+    });
+    bar.querySelector("[data-cookie-decline]").addEventListener("click", () => {
+      localStorage.setItem(consentKey, "denied");
+      bar.remove();
+    });
+  };
+
+  if (stored === "granted") {
+    jhmrLoadGtag();
+  } else if (stored !== "denied") {
+    showCookieBanner();
+  }
+
+  // Spåra telefon- och WhatsApp-klick som mikrokonverteringar
+  document.addEventListener("click", (event) => {
+    const link = event.target.closest ? event.target.closest("a") : null;
+    if (!link) return;
+    const href = link.getAttribute("href") || "";
+    if (href.indexOf("tel:") === 0) jhmrTrack("contact_call");
+    else if (href.indexOf("wa.me") !== -1) jhmrTrack("contact_whatsapp");
+  });
+}
+
 /* ---------- Dynamiskt årtal ---------- */
 if (year) {
   year.textContent = new Date().getFullYear();
@@ -345,6 +444,7 @@ if (contactForm && formSuccess) {
       if (!response.ok) throw new Error("Svaret från servern var inte OK");
 
       formSuccess.hidden = false;
+      jhmrTrackLead();
       contactForm.reset();
       formSuccess.scrollIntoView({
         behavior: prefersReduced ? "auto" : "smooth",
