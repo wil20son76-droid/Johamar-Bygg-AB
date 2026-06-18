@@ -460,3 +460,14 @@ if (contactForm && formSuccess) {
     }
   });
 }
+
+/* ============================================================
+   WhatsApp floating button — fade in efter 2 sekunder
+   ============================================================ */
+(function () {
+  const waBtn = document.querySelector("[data-wa-btn]");
+  if (!waBtn) return;
+  setTimeout(function () {
+    waBtn.classList.add("is-revealed");
+  }, 2000);
+})();
