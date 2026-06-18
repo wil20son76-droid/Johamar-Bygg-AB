@@ -151,11 +151,16 @@
 
       <section class="social-proof-band" aria-label="Kundomdömen och betyg">
         <div class="container">
-          <h2 class="sp-title reveal">Våra kunder rekommenderar oss</h2>
+
+          <div class="sp-header reveal">
+            <h2 class="sp-title">Våra kunder rekommenderar oss</h2>
+            <p class="sp-subtitle">Verifierade omdömen från kunder som anlitat oss för renovering, målning och byggprojekt i Storstockholm.</p>
+          </div>
+
           <div class="review-platform-grid">
             <article class="rp-card reveal">
               <div class="rp-logo-row">
-                <svg class="rp-google-g" viewBox="0 0 24 24" width="36" height="36" aria-hidden="true" focusable="false">
+                <svg class="rp-google-g" viewBox="0 0 24 24" width="34" height="34" aria-hidden="true" focusable="false">
                   <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
                   <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
                   <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
@@ -164,10 +169,12 @@
                 <span class="rp-platform">Google</span>
               </div>
               <span class="rp-stars" aria-label="5 stjärnor av 5">★★★★★</span>
-              <span class="rp-score">5,0</span>
-              <p class="rp-score-label">av 5</p>
-              <p class="rp-count">Verifierade kundomdömen</p>
-              <a class="btn btn-secondary" href="https://g.page/r/CeP5kmNfpg7SEBM/review" target="_blank" rel="noopener">Läs omdömen</a>
+              <div class="rp-score-block">
+                <span class="rp-score">5,0</span>
+                <span class="rp-av">av 5</span>
+              </div>
+              <p class="rp-text">Läs verifierade kundomdömen på Google.</p>
+              <a class="btn btn-secondary" href="https://g.page/r/CeP5kmNfpg7SEBM/review" target="_blank" rel="noopener">Läs på Google</a>
             </article>
             <article class="rp-card reveal">
               <div class="rp-logo-row">
@@ -175,12 +182,91 @@
                 <span class="rp-platform">Servicefinder</span>
               </div>
               <span class="rp-stars" aria-label="4,9 stjärnor av 5">★★★★★</span>
-              <span class="rp-score">4,9</span>
-              <p class="rp-score-label">av 5</p>
-              <p class="rp-count">21+ verifierade omdömen</p>
-              <a class="btn btn-secondary" href="https://servicefinder.se/foretag/7080833" target="_blank" rel="noopener">Se omdömen</a>
+              <div class="rp-score-block">
+                <span class="rp-score">4,9</span>
+                <span class="rp-av">av 5</span>
+              </div>
+              <p class="rp-text">Se 21+ verifierade omdömen på Servicefinder.</p>
+              <a class="btn btn-secondary" href="https://servicefinder.se/foretag/7080833" target="_blank" rel="noopener">Se på Servicefinder</a>
             </article>
           </div>
+
+          <!-- =============================================================
+               PLATSHÅLLARE – ersätt texterna nedan med riktiga kundomdömen.
+               Varje <article class="tc-card"> är ett omdöme.
+               Lägg till eller ta bort kort efter behov (håll antalet delbart med 3).
+               ============================================================= -->
+          <div class="tc-outer" data-carousel>
+            <div class="tc-viewport">
+              <div class="tc-track" data-tc-track>
+
+                <article class="tc-card">
+                  <div class="tc-stars" aria-hidden="true">★★★★★</div>
+                  <p class="tc-text">"Jättebra jobb med fasadrenoveringen. Snabbt, noggrant och till ett rimligt pris. Kan varmt rekommendera!"</p>
+                  <footer class="tc-author">
+                    <strong>Anna K.</strong>
+                    <span>Kungsängen</span>
+                  </footer>
+                </article>
+
+                <article class="tc-card">
+                  <div class="tc-stars" aria-hidden="true">★★★★★</div>
+                  <p class="tc-text">"Anlitade dem för köksrenovering och är jättenöjda. Tydlig kommunikation hela vägen och resultatet blev precis som vi ville."</p>
+                  <footer class="tc-author">
+                    <strong>Peter &amp; Karin S.</strong>
+                    <span>Kungsängen</span>
+                  </footer>
+                </article>
+
+                <article class="tc-card">
+                  <div class="tc-stars" aria-hidden="true">★★★★★</div>
+                  <p class="tc-text">"Proffsigt måleri i hela villan. Kom i tid, städade efter sig och levererade ett resultat vi är stolta över."</p>
+                  <footer class="tc-author">
+                    <strong>Johan H.</strong>
+                    <span>Järfälla</span>
+                  </footer>
+                </article>
+
+                <article class="tc-card">
+                  <div class="tc-stars" aria-hidden="true">★★★★★</div>
+                  <p class="tc-text">"Nytt trägolv i hela lägenheten – snyggt, hållbart och klart på utsatt tid. Riktigt bra hantverk."</p>
+                  <footer class="tc-author">
+                    <strong>Sara M.</strong>
+                    <span>Sollentuna</span>
+                  </footer>
+                </article>
+
+                <article class="tc-card">
+                  <div class="tc-stars" aria-hidden="true">★★★★★</div>
+                  <p class="tc-text">"Vår altan är nu ett drömområde. Transparent offert, bra hantverk och inga överraskningar med priset."</p>
+                  <footer class="tc-author">
+                    <strong>Anders N.</strong>
+                    <span>Upplands-Bro</span>
+                  </footer>
+                </article>
+
+                <article class="tc-card">
+                  <div class="tc-stars" aria-hidden="true">★★★★★</div>
+                  <p class="tc-text">"Takrengöringen gick smidigt från start till slut. Seriöst företag som håller vad de lovar. Nöjd kund!"</p>
+                  <footer class="tc-author">
+                    <strong>Gunnar P.</strong>
+                    <span>Järfälla</span>
+                  </footer>
+                </article>
+
+              </div>
+            </div>
+            <div class="tc-nav">
+              <button type="button" class="tc-arrow tc-prev" data-tc-prev aria-label="Föregående omdömen">
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+              </button>
+              <div class="tc-dots" data-tc-dots></div>
+              <button type="button" class="tc-arrow tc-next" data-tc-next aria-label="Nästa omdömen">
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+              </button>
+            </div>
+          </div>
+
         </div>
       </section>
 

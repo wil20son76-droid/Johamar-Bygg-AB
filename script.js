@@ -461,6 +461,95 @@ if (contactForm && formSuccess) {
   });
 }
 
+/* ---------- Testimonials carousel ---------- */
+(function () {
+  const outer = document.querySelector("[data-carousel]");
+  if (!outer) return;
+
+  const track = outer.querySelector("[data-tc-track]");
+  const cards = Array.from(track.querySelectorAll(".tc-card"));
+  const dotsWrap = outer.querySelector("[data-tc-dots]");
+  const btnPrev = outer.querySelector("[data-tc-prev]");
+  const btnNext = outer.querySelector("[data-tc-next]");
+  const INTERVAL = 5000;
+
+  let current = 0;
+  let autoTimer = null;
+
+  function perPage() {
+    if (window.innerWidth >= 900) return 3;
+    if (window.innerWidth >= 520) return 2;
+    return 1;
+  }
+
+  function totalPages() {
+    return Math.ceil(cards.length / perPage());
+  }
+
+  function updateTrack() {
+    if (!cards.length) return;
+    const gap = parseFloat(getComputedStyle(track).gap) || 0;
+    const cardW = cards[0].getBoundingClientRect().width;
+    track.style.transform = `translateX(-${current * perPage() * (cardW + gap)}px)`;
+  }
+
+  function buildDots() {
+    dotsWrap.innerHTML = "";
+    const pages = totalPages();
+    for (let i = 0; i < pages; i++) {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "tc-dot" + (i === current ? " is-active" : "");
+      btn.setAttribute("aria-label", `Sida ${i + 1}`);
+      btn.addEventListener("click", () => { goTo(i); startAuto(); });
+      dotsWrap.appendChild(btn);
+    }
+  }
+
+  function updateDots() {
+    Array.from(dotsWrap.children).forEach((dot, i) =>
+      dot.classList.toggle("is-active", i === current)
+    );
+  }
+
+  function goTo(index) {
+    const pages = totalPages();
+    current = ((index % pages) + pages) % pages;
+    updateTrack();
+    updateDots();
+  }
+
+  function startAuto() {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(() => goTo(current + 1), INTERVAL);
+  }
+
+  function stopAuto() {
+    clearInterval(autoTimer);
+    autoTimer = null;
+  }
+
+  buildDots();
+  updateTrack();
+  startAuto();
+
+  btnPrev.addEventListener("click", () => { goTo(current - 1); startAuto(); });
+  btnNext.addEventListener("click", () => { goTo(current + 1); startAuto(); });
+
+  outer.addEventListener("mouseenter", stopAuto);
+  outer.addEventListener("mouseleave", startAuto);
+
+  let resizeTimer;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      current = 0;
+      buildDots();
+      updateTrack();
+    }, 200);
+  });
+})();
+
 /* ============================================================
    WhatsApp floating button — fade in efter 2 sekunder
    ============================================================ */
