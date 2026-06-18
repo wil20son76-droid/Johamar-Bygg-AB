@@ -237,27 +237,27 @@ if (parallax && !prefersReduced) {
 const svcData = {
   maleri: {
     title: "Måleri & tapetsering",
-    body: "Invändig och utvändig målning samt tapetsering med noggrann förbehandling, jämna ytor och hållbara material. Vi hjälper dig med färgval som lyfter helheten och skyddar ytorna över tid.",
+    body: "Invändig och utvändig målning samt tapetsering med noggrann förbehandling och jämna, hållbara ytor. Vi hjälper dig med färg- och materialval som lyfter helheten – och håller i många år framöver.",
   },
   kok: {
     title: "Köksrenovering",
-    body: "Kompletta och delvisa köksrenoveringar där snickeri, ytskikt, montering och detaljer samspelar. Vi planerar funktion och förvaring för ett kök som håller både i stil och i vardagen.",
+    body: "Kompletta och delvisa köksrenoveringar med fokus på funktion, förvaring och finish. Vi koordinerar snickeri, ytskikt och montering – allt under ett och samma tak – så att du får ett kök som håller både i stil och i vardagen.",
   },
   golv: {
     title: "Golvslipning & läggning",
-    body: "Slipning, oljning, lackning, läggning och byte av golv för bostäder och lokaler. Vi återställer slitna trägolv och lägger nya golv med precision och fokus på slitstyrka.",
+    body: "Slipning, oljning, lackning och läggning av trägolv i bostäder och lokaler. Vi återställer slitna golv till sin ursprungliga lyster och lägger nytt med precision och fokus på slitstyrka.",
   },
   altan: {
     title: "Altaner & terrasser",
-    body: "Måttanpassade altaner och terrasser byggda för svenskt klimat. Vi tar hand om grund, stomme, trall och detaljer för en hållbar och inbjudande utemiljö.",
+    body: "Måttanpassade altaner och terrasser byggda för det svenska klimatet. Vi sköter grund, stomme, trall och detaljer från ritning till färdigt resultat – och kan hjälpa till med ansökan om bygglov vid behov.",
   },
   tak: {
     title: "Takrengöring",
-    body: "Skonsam rengöring och behandling av tak som tar bort mossa och påväxt, förlänger livslängden och håller fastigheten representativ och välskött.",
+    body: "Skonsam rengöring och behandling som tar bort mossa och påväxt, förlänger takytans livslängd och håller din fastighet välskött och representativ.",
   },
   fasad: {
     title: "Fasadrenovering & målning",
-    body: "Renovering och målning av fasader som skyddar mot väder och vind, förnyar utseendet och höjer värdet på din bostad eller fastighet.",
+    body: "Renovering och målning av fasader som skyddar mot väder och vind, förnyar utseendet och höjer fastighetsvärdet. Vi bedömer skick, väljer rätt material och levererar ett hållbart resultat.",
   },
 };
 
