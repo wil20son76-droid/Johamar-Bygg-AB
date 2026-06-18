@@ -1074,10 +1074,11 @@ h1, h2, h3 {
 }
 .footer-brand { color: var(--white); margin-bottom: 0.9rem; }
 .footer-logo {
-  height: 52px;
+  height: 44px;
   width: auto;
-  /* gör den tvåfärgade loggan vit på mörk bakgrund */
-  filter: brightness(0) invert(1);
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 8px;
+  padding: 4px 10px;
 }
 .site-footer h2 {
   font-size: 0.95rem;
